@@ -1,7 +1,7 @@
 ## project name
  Blog
 ## Author: 
-Clemence Kagabo .finaclemence15@gmail.com and https://github.com/finaclemence15/blog Date: Saturday September 29
+Clemence Kagabo finaclemence15@gmail.com and https://github.com/finaclemence15/blog Date: Saturday September 29
 ## Descrption of the project
 Blog is project that will contain the  the differences blogs  and the users will be able to views differences types of the news that will be accouring in my  website it will date  that news has published and also it will also has the name 
 of that blogs.
