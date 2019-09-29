@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% block content %}
+<link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display|Roboto+Condensed&display=swap" rel="stylesheet">
+<div class="container">
+    <div class="row about">
+        <div class="col-md-4 picture">
+            <!-- Displaying profile photo -->
+            {% if user.profile_pic_path %}
+                <img src="{{url_for('static',filename = user.profile_pic_path)}}" alt="" class="img-thumbnail rounded-circle">
+            {% else %}
+            no pic
+            {% endif %}
+
+            {% if user == current_user %}
+            <form action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype="multipart/form-data">
+                <input type="file" name="photo" class="form-control picture" required >
+                <input type="submit" name="submit" value="Upload Picture">
+            </form>
+            {% endif %}
+        </div>
+        <div class="col-md-8 stats">
+            <!-- Displaying user bio -->
+            <h3 class="user-tag" style="font-family: 'Turret Road', cursive; font-size: 35px;"> <strong>{{user.username|capitalize}}</strong> </h3>
+            <P style="font-family: 'Big Shoulders Display', cursive; font-size: 30px;">Tell Us Some Thing About Your Self.</P> <br>
+            <a href="{{url_for('main.update_profile',uname=user.username)}}">Tell Us</a>
+            <hr>
+            {% if user.bio %}
+                <p style="font-family: 'Big Shoulders Display', cursive; font-size: 30px;"> " {{user.bio|capitalize}} " </p>
+            {% else %}
+                <p style="font-family: 'Big Shoulders Display', cursive; font-size: 30px;">{{user.username|capitalize}} has no bio</p>
+            {% endif %}
+            {% if user == current_user %}
+            <br>
+            {% endif %}
+            <br>
+        </div>
+    </div>
+</div>
+{% endblock %}

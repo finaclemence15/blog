@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% import "bootstrap/wtf.html" as wtf%}
+{% import 'macros.html' as macro%}
+
+{% block styles%}
+    {{ super() }}
+    
+{% endblock %}
+<body>
+{% block content %}
+<div class="container">
+    <div class="row">
+        <blockquote class="text-center text-lg">
+            <p>{{quote.content}}</p>
+            <footer><cite>{{quote.author}}</cite></footer>
+        </blockquote>
+        <a href="blog/new" class="btn btn-primary">post blog here</a>
+        {{macro.displayBlogs(blogs)}}<br> <br>
+    </div>
+    <div class="row">
+
+        <div class="col-md-2"></div>
+        <div class="col-md-6" style="border: 1px solid black">
+            <h2>Subscribe here</h2>
+            <p>You will get an Email every time new post has been posted.</p>
+        {{wtf.quick_form(subscription_form)}} <br>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+<!-- <div class="footer">
+        <p class="jumbotron" style="color: black; font-family: 'Shadows Into Light', cursive; font-size: 25px; text-align: center;"> &copy;<strong> 2019 Copy Right  All right reserved.</strong><p>
+      </div> -->
+</body>
+{% endblock %}
+

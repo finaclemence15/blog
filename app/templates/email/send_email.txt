@@ -1,0 +1,6 @@
+Hello {{user.username}}
+
+There is a new Post on Personal Blog Post
+Title:{{blog.title}}
+
+Kindly check it out :)

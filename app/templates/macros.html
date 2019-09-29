@@ -1,0 +1,34 @@
+{% macro displayBlogs(blogs) %}
+
+{% for blog in blogs %}
+<body>
+<div class="container">
+
+   <h3 class='title'>{{blog.title}}</h3>
+   <p>{{blog.description}}</p>
+   
+  <img src="{{blog.image}}" alt="">
+
+ <a href="/comment/new/{{blog.id}}"><button class="btn btn-success">Comments </button></a>
+ <a href="/delete/blog/{{blog.id}}"><button class="btn btn-danger">Delete blog </button></a>
+ <a href="/edit/blog/{{blog.id}}"> <button class="btn btn-secondary">Edit blog </button></a>
+</div>
+
+
+ {%endfor%}
+ {%endmacro%}
+
+ {% macro displayComments(comments) %}
+
+ {% for comment in comments %}
+
+   <div class="container">
+   <h3 class="name">{{comment.username}}</h3>
+     <p>{{comment.content}}</p>
+     <a href="/delete/comment/{{comment.id}}" class="btn btn-danger">Delete Comment</a>
+     </div>
+</body>
+
+
+ {%endfor%}
+ {%endmacro%}
