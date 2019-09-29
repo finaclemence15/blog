@@ -2,28 +2,32 @@
 <div class="navbar navbar-inverse" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
+                <link href="https://fonts.googleapis.com/css?family=Underdog&display=swap" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Underdog&display=swap" rel="stylesheet">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                   <span class="sr-only">Toggle navigation</span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"> Blogging </a>
+                <a class="navbar-brand" href="/" style="font-family: 'Josefin Slab', serif; color:#E8DAEF; font-size: 25px;"> <strong> Posts </strong></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/">Home</a></li>
+                    <li><a href="/" style="font-family: 'Josefin Slab', serif; color:#E8DAEF; font-size: 25px;" ><strong> Home </strong> </a></li>
             </div>
 
         </div>
        
           <ul class="nav navbar-nav navbar-right">
             {% if current_user.is_authenticated %}
-            <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
-            <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+            <li><a href="{{url_for('main.profile',uname=current_user.username)}}" style="font-family: 'Josefin Slab', serif; color:#E8DAEF; font-size: 20px;"> <strong> {{current_user.username}} </strong></a></li>
+            <li><a href="{{url_for('auth.logout')}}" style="font-family: 'Josefin Slab', serif; color:#E8DAEF; font-size: 20px;"> <strong> Sign out </strong></a></li>
             {% else %}
-            <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
+            <li><a href="{{url_for('auth.login')}}" style="font-family: 'Josefin Slab', serif; color:#E8DAEF; font-size: 20px;"> <strong> Sign in </strong></a></li>
             {%endif%}
           </ul>
+
+          <h1 style="text-align: center;font-family: 'Underdog'; color:#E8DAEF; font-size: 50px; ">welcome to Blog Post</h1>
 
     </div>
