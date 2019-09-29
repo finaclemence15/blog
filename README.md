@@ -1,48 +1,61 @@
 ## project name
+
  Blog
-## Author: 
-Clemence Kagabo finaclemence15@gmail.com and https://github.com/finaclemence15/blog Date: Saturday September 29
+
+## Author
+
+Clemence Kagabo  [finaclemence15](https://github.com/finaclemence15)
+
+## Date
+
+29/9/12019
+
 ## Descrption of the project
-Blog is project that will contain the  the differences blogs  and the users will be able to views differences types of the news that will be accouring in my  website it will date  that news has published and also it will also has the name 
-of that blogs.
+
+Blog is project that will contain the  the differences posts that writers post  and the users will be able to views difference posts and user will be able to comment on that posts.
+
+the writers should post any post he / she want also they have the access to delete post, edit post and delete any comment the user commented on a post but writers to do all of those activites they must have an account in the system.
+
+Users if they want they can subscribe to get an alert on their email every time any writer put a post on the website.
+
 ## installation steps
-$ git clone $ cd blog $ source virtual/bin/activate Inside the manage.py module change the config_name Prerequisite These are some of the setups we need to install before we install the flask:
 
-python3.6 -m venv --without-pip virtual.
+- [x] clone the repository 
+- [x] cd blog 
+- [x] source virtual/bin/activate 
+- [x] Inside the manage.py module change the config_name 
 
-source virtual/bin/activate.
+## Prerequisite These are some of the setups we need to install :
 
-curl https://bootstrap.pypa.io/get-pip.py | python.
+* python3.6 -m venv --without-pip virtual.
 
-pip install flask.
-pip install flask-mail
-$ ./start.sh
-curl https://bootstrap.pypa.io/get-pip.py | python.
+* source virtual/bin/activate.
 
-pip install flask.
+* curl https://bootstrap.pypa.io/get-pip.py | python.
 
-run python 3.6manage.py shell in database
+* pip install flask
 
-## Instrcuction
+* pip install flask-mail
+
+
+## Instruction
+
 On the homepage user will see form that will have option of sending an email  by intering email and password and  your will have the option of  posting blog  and also some there will be a buttom  to  they will have to create an account  and also login in in case they have  an account thre will the differences news according to the type of news.user can be able to views and make some views on the news.
-## Test Driven Development -TDD
-inter the   your email and paasword   submit  post blog  you can have delete  and put the comment  you can create an  user account  if you don't have  and if you have it you can also login
+
+## Running the web app in development
+
+``` python3.6 manage.py server ```
+
+Open the app on your browser, by default on ``` 127.0.0.1:5000. ```
 
 ## Technologu Used
 
-Ptyhon3.6 
-HTML
-CSS
-Flask
-Boostrap
+* Ptyhon3.6 
+* HTML
+* CSS
+* Flask
+* Boostrap
 
-## contact
-Emails:akimanizanyeclaudine@gmail.com Phone:098766544,0789616355 Emails:akimanizanyeclaudine@akilahinstitute.org Repositority:https://github.com/AKIMANIZANYE/blog.git
-# #License and Copyright
+## Copyright
 
-.Permision of reading code         .You are not allowed to edit any file or folder.
-.Permission of delete blog
-.permission of testing website      .You are  not allowed to move  anyfile or folder
-.Permision of Riview 
-.persimision of commenting       
-.Permission of post your blog       .You are not allowed to host it again  this website.
+Copyright (c) All right reserved 2019
