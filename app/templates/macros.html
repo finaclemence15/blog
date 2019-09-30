@@ -8,7 +8,7 @@
 <body>
 <div class="container"> 
   <div class="row">
-   <h3 class='title' style="text-decoration: underline; font-family: 'Patua One', cursive;color: #85C1E9"> {{blog.title}}</h3> <br>
+   <h3 class='title' style="text-decoration: underline; font-family: 'Patua One', cursive;color: #85C1E9"> {{blog.title |capitalize}}</h3> <br>
    <p style="font-family: 'Ranga', cursive; font-size: 30px;"> <strong>" {{blog.description}} " </strong></p> <br>
    <blockquote>
    <footer style="font-size: 20px"><cite> Posted by {{blog.user.username|capitalize}} </cite></footer>
@@ -29,8 +29,8 @@
  {% for comment in comments %}
 
    <div class="container">
-   <h3 class="name">{{comment.username}}</h3>
-     <p>{{comment.content}}</p>
+   <h3 class="name">{{username}}</h3>
+     <p style="font-family: 'Patua One', cursive; font-size: 20px;"> <strong>{{comment.content}} </strong></p>
      <a href="/delete/comment/{{comment.id}}" style="border-radius: 12px; background-color: #17202A;margin: 4px 2px; color:#EAEDED;padding: 10px;text-decoration: none">Delete Comment</a>
      </div>
 </body>
