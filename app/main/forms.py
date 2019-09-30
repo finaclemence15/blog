@@ -5,7 +5,6 @@ from ..models import User, Subscription
 
 class CommentForm(FlaskForm):
 
-    # title = StringField('Review title',validators=[Required()])
     username=StringField('Username', validators = [Required()])
     comment = TextAreaField('Blog comment', validators=[Required()])
     submit = SubmitField('Submit')

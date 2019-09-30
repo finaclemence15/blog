@@ -28,7 +28,7 @@ def index():
        return redirect(url_for('main.index'))
  quote=get_quote()
  blogs=Blog.get_blogs()
- title= "WELCOME"
+ title= "Welcome to Blog Post Site"
 
  return render_template('index.html',title=title,quote=quote,blogs=blogs ,subscription_form=form)
 
@@ -55,7 +55,7 @@ def create_blogs():
         return redirect(url_for('main.index'))
 
 
-    title = "Add Post"   
+    title = "Add  New Post"   
     return render_template('blogs.html', title = title, blog_form = form)
 
 
