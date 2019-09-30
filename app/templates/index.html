@@ -4,35 +4,35 @@
 
 {% block styles%}
     {{ super() }}
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Ranga|Underdog&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Josefin+Slab|Ranga|Underdog&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Underdog&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">    
     
 {% endblock %}
 <body>
 {% block content %}
-<link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Ranga|Underdog&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Josefin+Slab|Ranga|Underdog&display=swap" rel="stylesheet">
 <div class="container">
     <div class="row">
         <blockquote class="text-center text-lg">
-            <p style="font-family: 'Ranga', cursive; font-size: 40px; background-color: #E8DAEF"> "<strong> {{quote.content}} </strong>"</p>
+            <p style="font-family: 'Ranga', cursive; font-size: 40px; background-color: #626567"> <strong> " {{quote.content}} " </strong> </p>
             <footer style="font-size: 20px"><cite> by {{quote.author}}</cite></footer>
         </blockquote> 
     </div>
 
     <br> <br>
+    <a class="navbar-brand" href="blog/new" style="font-family: 'Josefin Slab', serif; font-size: 25px;">Post Your Blog </a> <br> <br> <br> <br>
     <div class="row">
-        <!-- <a href="blog/new" class="btn btn-primary">post blog here</a> <br> -->
-        <h3 href="/" style="font-family: 'Fira Sans Condensed', sans-serif; color:#17202A; font-size: 30px;" ><strong>Posted by </strong> <em>{{current_user.username}} </em> </h3>
-        {{macro.displayBlogs(blogs)}} 
-    </div> <br> <br>
-    <div class="row">
-
-        <div class="col-md-2"></div>
-        <div class="col-md-6" style="border: 1px solid black">
-            <h2>Subscribe here</h2>
-            <p>You will get an Email every time new post has been posted.</p>
+    <div class="col-md-6" style="border-style: inset;border-width: 7px; border-color: #626567">
+        {{macro.displayBlogs(blogs)}}  <br><br>
+    </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-5" style="border-style: outset;border-width: 7px; border-color: #626567">
+            <h2 style="font-family: 'Josefin Slab', serif; font-size: 30px; color: #85C1E9"><strong> Subscribe here </strong> </h2>
+            <p style="font-family: 'Josefin Slab', serif; font-size: 20px" >You will get an Email every time new post has been posted.</p>
         {{wtf.quick_form(subscription_form)}} <br>
         </div>
-        <div class="col-md-2"></div>
+        <!-- <div class="col-md-2"></div> -->
     </div>
 </div>
 

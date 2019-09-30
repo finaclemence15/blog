@@ -53,9 +53,7 @@ def create_blogs():
            mail_message("New Blog Post","email/send_email",subscriber.email,user=subscriber,blog=new_blog)
 
         return redirect(url_for('main.index'))
-
-
-    title = "Add  New Post"   
+    title = "create new blog"   
     return render_template('blogs.html', title = title, blog_form = form)
 
 
@@ -75,22 +73,24 @@ def create_comments(id):
         db.session.commit()
 
     comments = Comment.get_comments(id=id)
+    title = "Write a comment"
+    return render_template('comments.html', form=form ,comments=comments, title=title)
 
-    return render_template('comments.html', form=form ,comments=comments)
+@main.route('/blog/<int:id>', methods = ['GET','POST'])
 
-@main.route('/blog/<int:id>')
 def blog(id):
     blog=Blog.query.filter_by(id=id).first()
     comments=Comment.get_comments(id=id)
     return render_template('blog.html',blog=blog,comments=comments)
+
 @main.route('/user/<uname>')
 def profile(uname):
     user = User.query.filter_by(username = uname).first()
 
     if user is None:
         abort(404)
-
-    return render_template("profile/profile.html", user = user)
+    title='Update Your Profile'
+    return render_template("profile/profile.html", user = user, titile= title)
 
 @main.route('/user/<uname>/update',methods = ['GET','POST'])
 @login_required
@@ -108,8 +108,9 @@ def update_profile(uname):
         db.session.commit()
 
         return redirect(url_for('.profile',uname=user.username))
+    title='Update Your  Biograph'
+    return render_template('profile/update.html',form =form, title= title)
 
-    return render_template('profile/update.html',form =form)
 @main.route('/user/<uname>/update/pic',methods= ['POST'])
 @login_required
 def update_pic(uname):
@@ -121,7 +122,7 @@ def update_pic(uname):
         filename = photos.save(request.files['photo'])
         path = f'photos/{filename}'
         user.profile_pic_path = path
-        db.session.commit()
+        db.session.commit()    
     return redirect(url_for('main.profile', uname=uname))
 
 @main.route('/delete/blog/<int:id>', methods = ['GET', 'POST'])
@@ -158,6 +159,7 @@ def update_blog(id):
 
          db.session.add(blog)
          db.session.commit()
-
+         
          return redirect(url_for('main.index'))
-   return render_template('update_blog.html',form=form)
+   title= 'Update your Blog'     
+   return render_template('update_blog.html',form=form, title=title)

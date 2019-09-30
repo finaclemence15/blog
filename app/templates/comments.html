@@ -8,12 +8,15 @@
 
 {% block content %}
 <div class="container">
-
-    <div>
+        <h1 style="font-family: 'Josefin Slab', serif; font-size: 30px; color: #85C1E9; text-align: center"> <strong> Write Your Comment Here </strong> </h1> <br>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6" style="border-style: outset;border-width: 7px; border-color: #626567"><br> <br>   
         {{wtf.quick_form(form)}}
+        <p>{{macro.displayComments(comments)}}</p> <br>
+      </div>  
+      <div class="col-md-3"></div>
     </div>
-
-    <p>{{macro.displayComments(comments)}}</p>
   
     
 

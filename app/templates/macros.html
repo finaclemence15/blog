@@ -1,20 +1,26 @@
 {% macro displayBlogs(blogs) %}
 
 {% for blog in blogs %}
-<body>
-<div class="container">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Josefin+Slab|Ranga|Underdog&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Patua+One&display=swap" rel="stylesheet">
 
-   <h3 class='title'>{{blog.title}}</h3>
-   <p>{{blog.description}}</p>
-   
+<body>
+<div class="container"> 
+  <div class="row">
+   <h3 class='title' style="text-decoration: underline; font-family: 'Patua One', cursive;color: #85C1E9"> {{blog.title}}</h3> <br>
+   <p style="font-family: 'Ranga', cursive; font-size: 30px;"> <strong>" {{blog.description}} " </strong></p> <br>
+   <blockquote>
+   <footer style="font-size: 20px"><cite> Posted by {{blog.user.username|capitalize}} </cite></footer>
+   </blockquote> 
+  </div>
+    <br>
   <img src="{{blog.image}}" alt="">
 
- <a href="/comment/new/{{blog.id}}"><button class="btn btn-success">Comments </button></a>
- <a href="/delete/blog/{{blog.id}}"><button class="btn btn-danger">Delete blog </button></a>
- <a href="/edit/blog/{{blog.id}}"> <button class="btn btn-secondary">Update blog </button></a>
+ <a href="/comment/new/{{blog.id}}" style="border-radius: 12px; background-color: #17202A;margin: 4px 2px; color:#EAEDED;padding: 10px;text-decoration: none"><strong> Comments </strong></a>
+ <a href="/delete/blog/{{blog.id}}" style="border-radius: 12px; background-color: #17202A;margin: 4px 2px; color: #EAEDED;padding: 10px; text-decoration: none"> <strong> Delete blog </strong></a>
+ <a href="/edit/blog/{{blog.id}}" style="border-radius: 12px; background-color: #17202A;margin: 4px 2px; color:#EAEDED;padding: 10px; text-decoration: none"> <strong>Update blog </strong></a>
 </div>
-
-
  {%endfor%}
  {%endmacro%}
 
@@ -25,7 +31,7 @@
    <div class="container">
    <h3 class="name">{{comment.username}}</h3>
      <p>{{comment.content}}</p>
-     <a href="/delete/comment/{{comment.id}}" class="btn btn-danger">Delete Comment</a>
+     <a href="/delete/comment/{{comment.id}}" style="border-radius: 12px; background-color: #17202A;margin: 4px 2px; color:#EAEDED;padding: 10px;text-decoration: none">Delete Comment</a>
      </div>
 </body>
 
