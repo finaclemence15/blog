@@ -90,7 +90,7 @@ def profile(uname):
     if user is None:
         abort(404)
     title='Update Your Profile'
-    return render_template("profile/profile.html", user = user, titile= title)
+    return render_template("profile/profile.html", user = user, title= title)
 
 @main.route('/user/<uname>/update',methods = ['GET','POST'])
 @login_required
